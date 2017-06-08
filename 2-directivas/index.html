@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Directivas</title>
+</head>
+<body>
+
+<main>
+
+  <h1 v-if="conectado">Estoy Conectado</h1>
+  <h2 v-if="edad < 18">No puedes entrar</h2>
+  <h2 v-else-if="edad > 200">Quien eres</h2>
+  <h2 v-else>Puedes Entrar</h2>
+
+  <template v-if="conectado">
+    <hr>
+    <h3>Arcoders</h3>
+    <ul>
+      <li>
+        <a href="">Home</a>
+        <a href="">Panel</a>
+        <a href="">Logout</a>
+      </li>
+    </ul>
+  </template>
+  <h4 v-else>No estas conectado</h4>
+
+  <pre>{{ $data }}</pre>
+
+</main>
+
+<script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
