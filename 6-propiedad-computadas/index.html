@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Eventos</title>
+
+</head>
+<body bgcolor="lavender">
+
+<main>
+
+  <!-- <h1>{{ mensaje_al_reves }}</h1> -->
+
+  <ul>
+    <li v-for="tarea in tareas">{{ tarea }}</li>
+  </ul>
+
+  <hr>
+
+  <ul>
+    <li v-if="otraTarea.prioridad" v-for="otraTarea in masTareas">
+      {{otraTarea.titulo}}
+    </li>
+  </ul>
+
+  <hr>
+
+  <ul>
+    <li v-for="tareaTrue in tareasConPrioridad">
+      {{ tareaTrue.titulo }}
+    </li>
+  </ul>
+
+  <hr>
+
+  <ul>
+    <li v-for="tareaAntiguedad in tareasPorAntiguedad">
+      {{ tareaAntiguedad.titulo }}
+    </li>
+  </ul>
+
+  <form v-on:submit.prevent="agregarTarea">
+    <input type="text" placeholder="Introduce tu tarea" v-model='nuevaTarea'>
+    <input type="submit" value="Enviar tarea">
+  </form>
+
+  <pre>{{ $data }}</pre>
+
+</main>
+
+<script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
