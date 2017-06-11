@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dynamic components</title>
+
+</head>
+<body bgcolor="lavender">
+
+<main>
+
+    <button @click="seleccionado = 'lista-tareas'">Tareas</button>
+    <button @click="seleccionado = 'contacto'">Contacto</button>
+    <button @click="seleccionado = 'bio'">Bio</button>
+
+    <component :is="seleccionado"></component>
+
+    <lista-tareas></lista-tareas>
+    <contacto></contacto>
+    <bio></bio>
+
+    <pre>{{ $data }}</pre>
+
+</main>
+
+<script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
